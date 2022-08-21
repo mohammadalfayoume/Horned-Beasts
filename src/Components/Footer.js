@@ -3,7 +3,7 @@ import React from "react";
 class Footer extends React.Component {
     render() {
         return(
-            <author>Mohammad Alfayoume from Footer component</author>
+            <author>My Name is Mohammad Alfayoume == It comes from Footer component</author>
         )
     }
 }
