@@ -12,6 +12,7 @@ class Main extends React.Component {
         super(props);
         this.state = {
           counter: "",
+          showAble : ""
         };
       }
     
@@ -23,7 +24,7 @@ class Main extends React.Component {
 
       show = () => {
         this.setState({
-            showAble: this.state.show
+            showAble: this.state.showAble
         })
       }
 

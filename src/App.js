@@ -12,13 +12,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      showMe: ""
+      showMe: alert("aaa")
     }
   }
 
   show = () => {
     this.setState({
-        showModule: this.state.handle
+        showModule: this.state.showMe
     })
 
     this.props.handle();
