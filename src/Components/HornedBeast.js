@@ -1,4 +1,5 @@
 import React from "react";
+// import data from "./data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
