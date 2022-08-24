@@ -3,8 +3,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Main from "./Components/Main";
 import data from "./Components/data.json";
-// import SelectedBeast from "./Components/SelectedBeast";
-// import { Card } from "react-bootstrap";
+import SelectedBeast from "./Components/SelectedBeast";
 
 
 class App extends React.Component {
@@ -12,17 +11,25 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      showMe: alert("aaa")
+      selBeast: {},
+      show: false
     }
   }
 
-  show = () => {
+  myFunction= (title)=> {
+    const SelectedBeast=data.find(beast=> beast.title===title)
     this.setState({
-        showModule: this.state.showMe
+      show:true,
+      selBeast: SelectedBeast
     })
+  }
 
-    this.props.handle();
-}
+  handleClose=()=>{
+    this.setState({
+      show: false,
+    })
+  }
+
 
 
   render(){
@@ -30,8 +37,8 @@ class App extends React.Component {
       <div>
         <Header />
         <Footer />
-        <Main theData={data} onClick={this.show} />
-        {/* <SelectedBeast  /> */}
+        <Main theData={data} myFunction={this.myFunction} />
+        <SelectedBeast showModal={this.state.show} handleClose={this.handleClose} selBeast={this.state.selBeast} />
       </div>
     )
   }

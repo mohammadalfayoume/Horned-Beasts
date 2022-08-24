@@ -1,8 +1,9 @@
 import React from "react";
-// import data from "./data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
+
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class HornedBeast extends React.Component {
               <p>{this.props.descr}</p>
               <h3>Favorites: {this.state.counter}</h3>
             </Card.Text>
+            <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}}>Show me the model</Button>
           </Card.Body>
         </Card>
       </Col>

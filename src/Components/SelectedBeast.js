@@ -1,41 +1,25 @@
-// import React from "react";
+import React from "react";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal'
 
-// class SelectedBeast extends React.Component {
+class SelectedBeast extends React.Component {
+  render() {
+    return (
+        <Modal show={this.props.showModal} onHide={this.props.handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{this.props.selBeast.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body><img style={{width:"400px"}} src={this.props.selBeast.image_url} alt={this.props.selBeast.title}></img> 
+        <p>{this.props.selBeast.description}</p> </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={this.props.handleClose}>
+            Close
+          </Button>
+          
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+}
 
-//     constructor(props) {
-//         super(props)
-//         this.state={
-//           showModule : show(),
-//           counter: "",
-//         }
-//       }
-      
-//       show=() => {
-//         this.setState({
-//           showModule: this.state.showModule,
-//         });
-//       }
-
-//       increamentFavHeart = () => {
-//         this.setState({
-//           counter: this.state.counter + "❤️",
-//         });
-//       };
-      
-//     render(){
-//         return(
-//             <div>
-//                 <p>{this.props.title}</p>
-//                 <img>src={this.props.image}
-//                     title={this.props.title}
-//                     onClick={this.increamentFavHeart}
-//                     onClick={this.increamentFavHeart}
-//                 </img>
-//                 <p>{this.props.description}</p>
-//             </div>
-
-//         )
-//     }
-// }
-
-// export default SelectedBeast;
+export default SelectedBeast;
