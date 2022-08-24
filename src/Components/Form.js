@@ -3,25 +3,24 @@ import Form from 'react-bootstrap/Form';
 
 class Selected extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            userStory: '',
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         userStory: '',
+    //     };
+    // }
   
   
   handleClicked = (e) => {
     this.props.handleForm(e.target.value)
   };
 
-    changeHandler = (e) => {
-        console.log(e.target.value);
-        this.setState({
-          userStory: e.target.value
-        });
+    // changeHandler = (e) => {
+    //     this.setState({
+    //       userStory: e.target.value
+    //     });
 
-  }
+//   }
 
   render() {
     return (
