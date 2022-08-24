@@ -22,7 +22,7 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <Col>
-        <Card style={{ width: "18rem", textAlign: "center" }}>
+        <Card style={{ width: "18rem", textAlign: "center" }} onClick={()=>{this.props.myFunction(this.props.title)}}>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Body>
             <Card.Img
@@ -33,6 +33,7 @@ class HornedBeast extends React.Component {
             />
             <Card.Text>
               <p>{this.props.descr}</p>
+              <h5>Hornes: {this.props.hornes}</h5>
               <h3>Favorites: {this.state.counter}</h3>
             </Card.Text>
             <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}}>Show me the model</Button>

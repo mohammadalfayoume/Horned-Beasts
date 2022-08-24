@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import Main from "./Components/Main";
 import data from "./Components/data.json";
 import SelectedBeast from "./Components/SelectedBeast";
+import Selected from "./Components/Form";
 
 
 class App extends React.Component {
@@ -12,8 +13,17 @@ class App extends React.Component {
     super(props)
     this.state={
       selBeast: {},
-      show: false
+      show: false,
+      dataOfHorns: null
     }
+  }
+
+  handleForm=(hornd)=>{
+    let selected =data.filter(item=>item.horns===hornd)
+
+    this.setState({
+      dataOfHorns: selected
+    })
   }
 
   myFunction= (title)=> {
@@ -36,6 +46,7 @@ class App extends React.Component {
     return(
       <div>
         <Header />
+        <Selected handleClose={this.state.dataOfHorns} />
         <Footer />
         <Main theData={data} myFunction={this.myFunction} />
         <SelectedBeast showModal={this.state.show} handleClose={this.handleClose} selBeast={this.state.selBeast} />
