@@ -33,7 +33,7 @@ class HornedBeast extends React.Component {
             />
             <Card.Text>
               <p>{this.props.descr}</p>
-              <h5>Hornes: {this.props.hornes}</h5>
+              <h5>Hornes: {this.props.horns}</h5>
               <h3>Favorites: {this.state.counter}</h3>
             </Card.Text>
             <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}}>Show me the model</Button>

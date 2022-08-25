@@ -6,28 +6,29 @@ class Selected extends React.Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         userStory: '',
+    //       value: 
     //     };
     // }
   
   
-  handleClicked = (e) => {
-    this.props.handleForm(e.target.value)
+  handleClicked = (event) => {
+    this.props.handle(event.target.value)
+    console.log(event.target.value)
+
+
   };
 
-    // changeHandler = (e) => {
-    //     this.setState({
-    //       userStory: e.target.value
-    //     });
-
-//   }
+  //   changeHandler = () => {
+  //       this.setState({
+  //         value: this.handleClicked
+  //       });
+  // }
 
   render() {
     return (
       <Form.Group className="mb-3">
-        <Form.Label></Form.Label>
-        <Form.Select onChanges={this.handleClicked}>
-          <option>Choose the number of hornes</option>
+        <Form.Select style={{backgroundColor:"gray"}} onChange={this.handleClicked}>
+          <option value={0}>Choose the number of hornes</option>
           <option value={1} >1 horn</option>
           <option value={2} >2 hornes</option>
           <option value={3} >3 hornes</option>

@@ -14,16 +14,28 @@ class App extends React.Component {
     this.state={
       selBeast: {},
       show: false,
-      dataOfHorns: null
+      
+      dataRender: data
     }
   }
 
   handleForm=(hornd)=>{
-    let selected =data.filter(item=>item.horns===hornd)
+    let selected =data.filter((item)=>{
+      return item.horns==hornd
+    })
+    console.log(selected);
+    let variable= data
+
+    if (hornd != 0) {
+      variable = selected
+    }
 
     this.setState({
-      dataOfHorns: selected
+      dataRender: variable
+      
     })
+     
+    
   }
 
   myFunction= (title)=> {
@@ -46,9 +58,9 @@ class App extends React.Component {
     return(
       <div>
         <Header />
-        <Selected handleClose={this.state.dataOfHorns} />
+        <Selected handle={this.handleForm} />
         <Footer />
-        <Main theData={data} myFunction={this.myFunction} />
+        <Main theData={this.state.dataRender} myFunction={this.myFunction} />
         <SelectedBeast showModal={this.state.show} handleClose={this.handleClose} selBeast={this.state.selBeast} />
       </div>
     )

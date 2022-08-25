@@ -15,7 +15,7 @@ class Main extends React.Component {
       <Row xs={1} md={4} className="g-4">
         {this.props.theData.map((card) => {
           return (
-            <HornedBeast title={card.title} image={card.image_url} descr={card.description} myFunction={this.props.myFunction} hornes={card.horns} />
+            <HornedBeast title={card.title} image={card.image_url} descr={card.description} myFunction={this.props.myFunction} horns={card.horns} />
           );
         })}
       </Row>
