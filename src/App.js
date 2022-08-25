@@ -53,14 +53,13 @@ class App extends React.Component {
   }
 
 
-
   render(){
     return(
       <div>
         <Header />
         <Selected handle={this.handleForm} />
-        <Footer />
         <Main theData={this.state.dataRender} myFunction={this.myFunction} />
+        <Footer />
         <SelectedBeast showModal={this.state.show} handleClose={this.handleClose} selBeast={this.state.selBeast} />
       </div>
     )

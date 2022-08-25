@@ -11,7 +11,7 @@ class Main extends React.Component {
 
   render() {
     return (
-
+      <div style={{backgroundColor:'#141619', padding:"20px"}}>
       <Row xs={1} md={4} className="g-4">
         {this.props.theData.map((card) => {
           return (
@@ -19,6 +19,7 @@ class Main extends React.Component {
           );
         })}
       </Row>
+      </div>
     );
   }
 }

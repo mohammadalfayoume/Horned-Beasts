@@ -30,13 +30,14 @@ class HornedBeast extends React.Component {
               src={this.props.image}
               title={this.props.title}
               onClick={this.increamentFavHeart}
+              
             />
             <Card.Text>
               <p>{this.props.descr}</p>
               <h5>Hornes: {this.props.horns}</h5>
               <h3>Favorites: {this.state.counter}</h3>
             </Card.Text>
-            <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}}>Show me the model</Button>
+            <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}} onClick={this.increamentFavHeart}>Show me the model</Button>
           </Card.Body>
         </Card>
       </Col>
