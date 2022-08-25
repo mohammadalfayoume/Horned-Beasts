@@ -22,14 +22,14 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <Col>
-        <Card style={{ width: "18rem", textAlign: "center" }} onClick={()=>{this.props.myFunction(this.props.title)}}>
+        <Card style={{ width: "18rem", textAlign: "center" }} >
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Body>
             <Card.Img
               variant="top"
               src={this.props.image}
               title={this.props.title}
-              onClick={this.increamentFavHeart}
+              
               
             />
             <Card.Text>
@@ -37,7 +37,8 @@ class HornedBeast extends React.Component {
               <h5>Hornes: {this.props.horns}</h5>
               <h3>Favorites: {this.state.counter}</h3>
             </Card.Text>
-            <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}} onClick={this.increamentFavHeart}>Show me the model</Button>
+            <Button variant="primary" onClick={()=>{this.props.myFunction(this.props.title)}}>Show me the model</Button>
+            <Button style={{margin:"10px"}} variant="primary" onClick={this.increamentFavHeart}>increament Heart</Button>
           </Card.Body>
         </Card>
       </Col>
